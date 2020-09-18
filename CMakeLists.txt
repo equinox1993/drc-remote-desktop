@@ -17,11 +17,13 @@ add_subdirectory(third_party/abseil-cpp)
 add_subdirectory(third_party/webrtc)
 
 file(GLOB SRCS
+    input_injector.cc
     main.cc
     vector_desktop_frame.cc)
 add_executable(drc-remote-desktop ${SRCS})
 target_link_libraries(drc-remote-desktop
     webrtc
+    Xtst
     PkgConfig::LIBDRC
     PkgConfig::LIBSWSCALE
     PkgConfig::X264)
